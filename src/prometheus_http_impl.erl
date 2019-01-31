@@ -138,9 +138,7 @@ negotiate_encoding(AcceptEncoding) ->
   %% curl and other tools do not send Accept-Encoding field.
   %% RFC says it means we can render any encoding.
   %% But people want to see something meaningful in console!
-  accept_encoding_header:negotiate(AcceptEncoding, [<<"identity">>,
-                                                    <<"gzip">>,
-                                                    <<"deflate">>]).
+  accept_encoding_header:negotiate(AcceptEncoding, [<<"identity">>]).
 
 render_format(Format, Registry) ->
   ContentType = Format:content_type(),
